@@ -72,3 +72,79 @@ else
     echo " ... Chyba";
 fi
 
+echo "[test_07] validace img_01.txt";
+./proj3 --test test/img_01.txt > test/test_07.output
+diff test/test_07.ref test/test_07.output
+
+if [ "$?" = "0" ]; then
+    echo " ... OK";
+    rm test/test_07.output;
+else
+    echo " ... Chyba";
+fi
+
+echo "[test_08] validace img_02.txt";
+./proj3 --test test/img_02.txt > test/test_08.output
+diff test/test_08.ref test/test_08.output
+
+if [ "$?" = "0" ]; then
+    echo " ... OK";
+    rm test/test_08.output;
+else
+    echo " ... Chyba";
+fi
+
+echo "[test_09] validace obrazku proj3";
+./proj3 --test proj3 > test/test_09.output
+diff test/test_09.ref test/test_09.output
+
+if [ "$?" = "0" ]; then
+    echo " ... OK";
+    rm test/test_09.output;
+else
+    echo " ... Chyba";
+fi
+
+echo "[test_10] validace obrazku img_03.txt";
+./proj3 --test test/img_03.txt > test/test_10.output
+diff test/test_10.ref test/test_10.output
+
+if [ "$?" = "0" ]; then
+    echo " ... OK";
+    rm test/test_10.output;
+else
+    echo " ... Chyba";
+fi
+
+echo "[test_11] validace obrazku img_04.txt";
+./proj3 --test test/img_04.txt > test/test_11.output
+diff test/test_11.ref test/test_11.output
+
+if [ "$?" = "0" ]; then
+    echo " ... OK";
+    rm test/test_11.output;
+else
+echo " ... Chyba";
+fi
+
+echo "[test_12] validace obrazku img_05.txt";
+./proj3 --test test/img_05.txt > test/test_12.output
+diff test/test_12.ref test/test_12.output
+
+if [ "$?" = "0" ]; then
+    echo " ... OK";
+    rm test/test_12.output;
+else
+    echo " ... Chyba";
+fi
+
+echo "[test_13] validace obrazku img_06.txt";
+./proj3 --test test/img_06.txt > test/test_13.output
+diff test/test_13.ref test/test_13.output
+
+if [ "$?" = "0" ]; then
+    echo " ... OK";
+    rm test/test_13.output;
+else
+    echo " ... Chyba";
+fi
