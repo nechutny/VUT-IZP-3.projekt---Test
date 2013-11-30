@@ -148,3 +148,14 @@ if [ "$?" = "0" ]; then
 else
     echo " ... Chyba";
 fi
+
+echo "[test_14] validace obrazku img_07.txt";
+./proj3 --test test/img_07.txt > test/test_14.output
+diff test/test_14.ref test/test_14.output
+
+if [ "$?" = "0" ]; then
+    echo " ... OK";
+    rm test/test_14.output;
+else
+    echo " ... Chyba";
+fi
