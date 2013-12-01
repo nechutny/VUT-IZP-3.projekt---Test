@@ -250,6 +250,43 @@ else
     echo " ... Chyba";
 fi
 
+echo "[test_21] vertikalni hledani v img_10.txt";
+./proj3 --vline test/img_10.txt > test/test_21.output
+diff test/test_21.ref test/test_21.output
 
-echo "\n+------------------+\n|  Proslo $ok z 20  |\n+------------------+";
+if [ "$?" = "0" ]; then
+    echo " ... OK";
+    rm test/test_21.output;
+    ok=`expr $ok + 1`
+else
+    echo " ... Chyba";
+fi
+
+echo "[test_22] horizontalni hledani v img_10.txt";
+./proj3 --hline test/img_10.txt > test/test_22.output
+diff test/test_22.ref test/test_22.output
+
+if [ "$?" = "0" ]; then
+    echo " ... OK";
+    rm test/test_22.output;
+    ok=`expr $ok + 1`
+else
+    echo " ... Chyba";
+fi
+
+echo "[test_23] hledani ctverce v img_10.txt";
+./proj3 --square test/img_10.txt > test/test_23.output
+diff test/test_23.ref test/test_23.output
+
+if [ "$?" = "0" ]; then
+    echo " ... OK";
+    rm test/test_23.output;
+    ok=`expr $ok + 1`
+else
+    echo " ... Chyba";
+fi
+
+
+
+echo "\n+------------------+\n|  Proslo $ok z 23  |\n+------------------+";
 
