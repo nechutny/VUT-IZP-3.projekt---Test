@@ -322,7 +322,31 @@ else
     echo " ... Chyba";
 fi
 
+echo "[test_27] hledani ctverce v img_12.txt";
+./proj3 --square test/img_12.txt > test/test_27.output
+diff test/test_27.ref test/test_27.output
+
+if [ "$?" = "0" ]; then
+    echo " ... OK";
+    rm test/test_27.output;
+ok=`expr $ok + 1`
+else
+    echo " ... Chyba";
+fi
+
+echo "[test_28] validace img_13.txt";
+./proj3 --test test/img_13.txt > test/test_28.output
+diff test/test_28.ref test/test_28.output
+
+if [ "$?" = "0" ]; then
+    echo " ... OK";
+    rm test/test_28.output;
+    ok=`expr $ok + 1`
+else
+    echo " ... Chyba";
+fi
 
 
-echo "\n+------------------+\n|  Proslo $ok z 26  |\n+------------------+";
+
+echo "\n+------------------+\n|  Proslo $ok z 28  |\n+------------------+";
 
