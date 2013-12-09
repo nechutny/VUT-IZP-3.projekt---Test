@@ -358,5 +358,29 @@ else
     echo " ... Chyba";
 fi
 
-echo "\n+------------------+\n|  Proslo $ok z 29  |\n+------------------+";
+echo "[test_30] validace img_15.txt";
+./proj3 --test test/img_15.txt > test/test_30.output
+diff test/test_30.ref test/test_30.output
+
+if [ "$?" = "0" ]; then
+    echo " ... OK";
+    rm test/test_30.output;
+    ok=`expr $ok + 1`
+else
+    echo " ... Chyba";
+fi
+
+echo "[test_31] validace img_16.txt";
+./proj3 --test test/img_16.txt > test/test_31.output
+diff test/test_31.ref test/test_31.output
+
+if [ "$?" = "0" ]; then
+    echo " ... OK";
+    rm test/test_31.output;
+    ok=`expr $ok + 1`
+else
+    echo " ... Chyba";
+fi
+
+echo "\n+------------------+\n|  Proslo $ok z 31  |\n+------------------+";
 
