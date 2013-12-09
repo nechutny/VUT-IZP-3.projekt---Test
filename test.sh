@@ -329,7 +329,7 @@ diff test/test_27.ref test/test_27.output
 if [ "$?" = "0" ]; then
     echo " ... OK";
     rm test/test_27.output;
-ok=`expr $ok + 1`
+    ok=`expr $ok + 1`
 else
     echo " ... Chyba";
 fi
@@ -346,7 +346,17 @@ else
     echo " ... Chyba";
 fi
 
+echo "[test_29] validace img_14.txt";
+./proj3 --test test/img_14.txt > test/test_29.output
+diff test/test_29.ref test/test_29.output
 
+if [ "$?" = "0" ]; then
+    echo " ... OK";
+        rm test/test_29.output;
+    ok=`expr $ok + 1`
+else
+    echo " ... Chyba";
+fi
 
-echo "\n+------------------+\n|  Proslo $ok z 28  |\n+------------------+";
+echo "\n+------------------+\n|  Proslo $ok z 29  |\n+------------------+";
 
