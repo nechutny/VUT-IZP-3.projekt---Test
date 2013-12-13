@@ -382,5 +382,17 @@ else
     echo " ... Chyba";
 fi
 
-echo "\n+------------------+\n|  Proslo $ok z 31  |\n+------------------+";
+echo "[test_32] test na vertikalni hledani v img_17.txt";
+./proj3 --test test/img_17.txt > test/test_32.output
+diff test/test_32.ref test/test_32.output
+
+if [ "$?" = "0" ]; then
+    echo " ... OK";
+    rm test/test_32.output;
+    ok=`expr $ok + 1`
+else
+    echo " ... Chyba";
+fi
+
+echo "\n+------------------+\n|  Proslo $ok z 32  |\n+------------------+";
 
