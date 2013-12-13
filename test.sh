@@ -382,7 +382,7 @@ else
     echo " ... Chyba";
 fi
 
-echo "[test_32] test na vertikalni hledani v img_17.txt";
+echo "[test_32] vertikalni hledani v img_17.txt";
 ./proj3 --vline test/img_17.txt > test/test_32.output
 diff test/test_32.ref test/test_32.output
 
